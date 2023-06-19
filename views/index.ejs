@@ -1,95 +1,98 @@
 <% notes.forEach((element) => { %>
-<div class="col">
-  <div class="card pe-4 glassmorphism text-light">
-    <div class="card-body">
-      <h5 class="card-title"><%= element.title %></h5>
-      <p class="card-text overflow-hidden" style="max-height: 250px">
-        <%= element.content %>
-      </p>
-      <!-- Button trigger modal -->
-      <button
-        type="button"
-        class="btn btn-outline-warning triger-edit"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal2<%= element.id %>"
-      >
-        Detail
-      </button>
+<div class="grid-item">
+  <div class="col">
+    <div class="card pe-4 glassmorphism text-light rounded-3 p-2">
+      <div class="card-body">
+        <h5 class="card-title"><%= element.title %></h5>
+        <p class="card-text overflow-hidden pb-5" style="max-height: 250px">
+          <%= element.content %>
+        </p>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn triger-edit"
+          style="background-color: #eb074f"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal2<%= element.id %>"
+        >
+          Detail
+        </button>
 
-      <!-- Modal -->
-      <div
-        class="modal fade modal-xl text-dark"
-        id="exampleModal2<%= element.id %>"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">
-                <%= element.title %>
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form method="post" action="/" class="d-inline">
-                <input type="hidden" name="id" value="<%= element.id %>" />
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"
-                    >Title</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="exampleInputEmail1 title"
-                    aria-describedby="emailHelp"
-                    value="<%= element.title %>"
-                    name="title"
-                  />
-                </div>
-                <div class="mb-3">
-                  <!-- <div class="input-group"> -->
-                  <div class="">
-                    <textarea
-                      class="form-control text-content-edit"
-                      placeholder="Leave a comment here"
-                      id="floatingTextarea content"
-                      name="content"
-                      style="min-height: 55vh"
+        <!-- Modal -->
+        <div
+          class="modal fade modal-xl text-light"
+          id="exampleModal2<%= element.id %>"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+              <div class="modal-header border border-0">
+                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">
+                  <%= element.title %>
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form method="post" action="/" class="d-inline">
+                  <input type="hidden" name="id" value="<%= element.id %>" />
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Title</label
                     >
+                    <input
+                      type="text"
+                      class="form-control bg-dark text-light border border-0"
+                      id="exampleInputEmail1 title"
+                      aria-describedby="emailHelp"
+                      value="<%= element.title %>"
+                      name="title"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <!-- <div class="input-group"> -->
+                    <div class="">
+                      <textarea
+                        class="form-control text-content-edit bg-dark text-light border border-0"
+                        placeholder="Leave a comment here"
+                        id="floatingTextarea content"
+                        name="content"
+                        style="min-height: 55vh"
+                      >
 <%= element.content %></textarea
-                    >
+                      >
+                    </div>
+
+                    <!-- </div> -->
                   </div>
 
-                  <!-- </div> -->
-                </div>
-
-                <button
-                  type="submit"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </form>
-              <form method="post" action="/delete" class="d-inline">
-                <input type="hidden" name="id" value="<%= element.id %>" />
-                <button
-                  type="submit"
-                  class="btn btn-danger"
-                  onclick="return confirm(`Delete this contact ?`)"
-                >
-                  Delete
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </form>
+                <form method="post" action="/delete" class="d-inline">
+                  <input type="hidden" name="id" value="<%= element.id %>" />
+                  <button
+                    type="submit"
+                    class="btn btn-danger"
+                    onclick="return confirm(`Delete this contact ?`)"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </div>
+              <div class="modal-footer border border-0"></div>
             </div>
-            <div class="modal-footer"></div>
           </div>
         </div>
       </div>
