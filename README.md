@@ -5,8 +5,10 @@ i created this project to train my CRUD (Create, Update, Delete, Skill) skill us
 Made use :
     HTML
     CSS
+    Bootstrap
     NodeJS
     ExpressJS
     MySQL Database
     EJS View Engine
-    few NPM package
+    few NPM packages
+    
