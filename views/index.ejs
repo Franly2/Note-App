@@ -40,7 +40,11 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <form method="post" action="/" class="d-inline">
+                <form
+                  method="POST"
+                  action="/update?_method=PUT"
+                  class="d-inline"
+                >
                   <input type="hidden" name="id" value="<%= element.id %>" />
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"
@@ -80,7 +84,11 @@
                     Close
                   </button>
                 </form>
-                <form method="post" action="/delete" class="d-inline">
+                <form
+                  method="POST"
+                  action="/delete?_method=DELETE"
+                  class="d-inline"
+                >
                   <input type="hidden" name="id" value="<%= element.id %>" />
                   <button
                     type="submit"

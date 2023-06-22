@@ -12,6 +12,21 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// ! CREATE new note
+app.post("/submit", async (req, res) => {
+  let data = req.body;
+  console.log(data);
+
+  fungsi.createNote(req.body);
+
+  let notes = await fungsi.getAllNotes();
+  res.render("index", {
+    layout: "layouts/main-layout",
+    notes,
+  });
+});
+
+// ! GET all notes
 app.get(`/`, async function (req, res) {
   let notes = await fungsi.getAllNotes();
   res.render("index", {
@@ -20,7 +35,8 @@ app.get(`/`, async function (req, res) {
   });
 });
 
-app.post("/", async (req, res) => {
+// ! UPDATE note
+app.put("/update", async (req, res) => {
   // Mengambil data form dari req.body
 
   // Lakukan pemrosesan data sesuai kebutuhan
@@ -40,20 +56,8 @@ app.post("/", async (req, res) => {
   });
 });
 
-app.post("/submit", async (req, res) => {
-  let data = req.body;
-  console.log(data);
-
-  fungsi.createNote(req.body);
-
-  let notes = await fungsi.getAllNotes();
-  res.render("index", {
-    layout: "layouts/main-layout",
-    notes,
-  });
-});
-
-app.post("/delete", async (req, res) => {
+// ! DELETE note
+app.delete("/delete", async (req, res) => {
   let id = req.body.id;
   console.log(id);
 
