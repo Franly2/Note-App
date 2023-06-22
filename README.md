@@ -15,6 +15,6 @@ Made use :
    -  EJS View Engine
    -  few NPM packages
 
-But, this project still cant use for public now, because im still learning about user account registration and login
+But, this project still cant use for public now, because im still learning about user account registration and login.
 i trying this project will go to public ASAP
     
