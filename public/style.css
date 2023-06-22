@@ -34,7 +34,6 @@ body {
   /* Set a background color that will be displayed
   while the background image is loading */
   background-color: green;
-  overflow: hidden;
 
   /* Location of the image */
   background-image: url("./wave.png");
