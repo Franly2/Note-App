@@ -3,7 +3,7 @@
 Demo : https://www.youtube.com/watch?v=6lCj1PcJnWs
 
 
-i created this project to train my CRUD (Create, Update, Delete, Skill) skill using MySQL Database
+i am create this project to train my CRUD (Create, Update, Delete, Skill) skill using MySQL Database
 
 Made use :
     HTML
