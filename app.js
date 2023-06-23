@@ -18,12 +18,13 @@ app.post("/submit", async (req, res) => {
   console.log(data);
 
   fungsi.createNote(req.body);
+  res.redirect("/");
 
-  let notes = await fungsi.getAllNotes();
-  res.render("index", {
-    layout: "layouts/main-layout",
-    notes,
-  });
+  // let notes = await fungsi.getAllNotes();
+  // res.render("index", {
+  //   layout: "layouts/main-layout",
+  //   notes,
+  // });
 });
 
 // ! GET all notes
@@ -37,9 +38,6 @@ app.get(`/`, async function (req, res) {
 
 // ! UPDATE note
 app.put("/update", async (req, res) => {
-  // Mengambil data form dari req.body
-
-  // Lakukan pemrosesan data sesuai kebutuhan
   let data = req.body.title;
   console.log(data);
   const id = req.body.id;
@@ -47,27 +45,28 @@ app.put("/update", async (req, res) => {
   const content = req.body.content;
 
   fungsi.updateNote(title, content, id);
+  res.redirect("/");
 
-  // Kirim respons atau redirect ke halaman lain
-  let notes = await fungsi.getAllNotes();
-  res.render("index", {
-    layout: "layouts/main-layout",
-    notes,
-  });
+  // let notes = await fungsi.getAllNotes();
+  // res.render("index", {
+  //   layout: "layouts/main-layout",
+  //   notes,
+  // });
 });
 
 // ! DELETE note
 app.delete("/delete", async (req, res) => {
   let id = req.body.id;
-  console.log(id);
+  // console.log(id);
 
   fungsi.deleteNote(id);
+  res.redirect("/");
 
-  let notes = await fungsi.getAllNotes();
-  res.render("index", {
-    layout: "layouts/main-layout",
-    notes,
-  });
+  // let notes = await fungsi.getAllNotes();
+  // res.render("index", {
+  //   layout: "layouts/main-layout",
+  //   notes,
+  // });
 });
 
 app.listen(3000, function () {

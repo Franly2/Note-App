@@ -56,7 +56,7 @@ async function updateNote(title, content, id) {
     [title, content, id],
     (error, results) => {
       if (error) throw error;
-      console.log(results);
+      // console.log(results);
     }
   );
 }
