@@ -1,14 +1,20 @@
 # Note-App
 
-i created this project to train my CRUD (Create, Update, Delete, Skill) skill using MySQL Database
+Demo : https://www.youtube.com/watch?v=6lCj1PcJnWs
+
+
+i'am create this project to applied my knowledge about database
 
 Made use :
-    HTML
-    CSS
-    Bootstrap
-    NodeJS
-    ExpressJS
-    MySQL Database
-    EJS View Engine
-    few NPM packages
+   - HTML
+   - CSS
+   - Bootstrap
+   -  NodeJS
+   -  ExpressJS
+   -  MySQL Database
+   -  EJS View Engine
+   -  few NPM packages
+
+But, this project still cant use for public now, because i'am still learning about user account registration and login.
+I'am trying this project will go to public ASAP
     
