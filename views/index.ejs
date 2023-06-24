@@ -1,13 +1,13 @@
 <% notes.forEach((element) => { %>
 <div class="grid-item">
   <div class="col">
-    <div
-      class="card pe-4 glassmorphism text-light rounded-3 p-2"
-      style="max-width: 20vw"
-    >
+    <div class="card pe-4 glassmorphism text-light rounded-3 p-2 mt-3">
       <div class="card-body">
         <h5 class="card-title"><%= element.title %></h5>
-        <p class="card-text overflow-hidden pb-5" style="max-height: 250px">
+        <p
+          class="card-text overflow-hidden pb-5"
+          style="max-width: 100px; max-height: 120px"
+        >
           <%= element.content %>
         </p>
         <!-- Button trigger modal -->
