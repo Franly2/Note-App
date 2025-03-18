@@ -15,6 +15,3 @@ Made use :
    -  EJS View Engine
    -  few NPM packages
 
-But, this project still cant use for public now, because i'am still learning about user account registration and login.
-I'am trying this project will go to public ASAP
-    
