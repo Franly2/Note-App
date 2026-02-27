@@ -1,0 +1,127 @@
+<% notes.forEach((element) => { %>
+<div class="grid-item">
+  <div class="col">
+    <div
+      class="card pe-4 glassmorphism text-light rounded-3 p-2"
+      style="max-width: 20vw"
+    >
+      <div class="card-body">
+        <h5 class="card-title"><%= element.title %></h5>
+        <p class="card-text overflow-hidden pb-5" style="max-height: 250px">
+          <%= element.content %>
+        </p>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn triger-edit"
+          style="background-color: #eb074f"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal2<%= element.id %>"
+        >
+          Detail
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade modal-xl text-light"
+          id="exampleModal2<%= element.id %>"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+              <div class="modal-header border border-0">
+                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">
+                  <%= element.title %>
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form
+                  method="POST"
+                  action="/update?_method=PUT"
+                  class="d-inline"
+                >
+                  <input type="hidden" name="id" value="<%= element.id %>" />
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Title</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control bg-dark text-light border border-0"
+                      id="exampleInputEmail1 title"
+                      aria-describedby="emailHelp"
+                      value="<%= element.title %>"
+                      name="title"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <!-- <div class="input-group"> -->
+                    <div class="">
+                      <textarea
+                        class="form-control text-content-edit bg-dark text-light border border-0"
+                        placeholder="Leave a comment here"
+                        id="floatingTextarea content"
+                        name="content"
+                        style="min-height: 55vh"
+                      >
+<%= element.content %></textarea
+                      >
+                    </div>
+
+                    <!-- </div> -->
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </form>
+                <form
+                  method="POST"
+                  action="/delete?_method=DELETE"
+                  class="d-inline"
+                >
+                  <input type="hidden" name="id" value="<%= element.id %>" />
+                  <button
+                    type="submit"
+                    class="btn btn-danger"
+                    onclick="return confirm(`Delete this note ?`)"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </div>
+              <div class="modal-footer border border-0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% }) %>
+
+<script>
+  const parentElement = document.getElementById("parent-element");
+
+  parentElement.addEventListener("click", function (event) {
+    let targetElement = event.target;
+
+    if (targetElement.classList.contains("button-edit")) {
+      console.log("Elemen target telah diklik.");
+      const content_text = document.querySelector(".text-content-edit");
+      content_text.disabled = "false";
+    }
+  });
+</script>

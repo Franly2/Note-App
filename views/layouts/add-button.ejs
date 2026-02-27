@@ -1,0 +1,75 @@
+<div class="d-grid gap-2 px-4" style="margin-top: 80px">
+  <button
+    class="btn btn-dark form-trigger"
+    style="background-color: #ff3c00"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
+    Add new note
+  </button>
+  <!-- modal -->
+  <div
+    class="modal fade modal-fullscreen-md-down modal-xl"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border border-0">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Note</h1>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="/submit">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label bg-dark"
+                >Title</label
+              >
+              <input
+                placeholder="Title Here..."
+                type="text"
+                class="form-control clear bg-secondary border border-0 text-white p-3"
+                name="title"
+                id="exampleInputEmail1 title"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="floatingTextarea2">Note</label>
+
+              <textarea
+                class="form-control clear bg-secondary text-white p-3 mt-4 border border-0"
+                placeholder="Note Here..."
+                id="floatingTextarea2 content"
+                name="content"
+                style="height: 100px; min-height: 50vh"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="background-color: #bc2573">
+              Submit
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
